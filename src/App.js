@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import PrivacyPolicy from './components/more_info/privacy_policy/PrivacyPolicy';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		//BEM
+		<div className="App">
+			<PrivacyPolicy />
+		</div>
+	);
 }
 
 export default App;

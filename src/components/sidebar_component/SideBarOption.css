@@ -1,0 +1,30 @@
+.sidebarOptions {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
+.icons {
+	padding: 20px;
+	align-items: center;
+}
+
+.sidebarOptions > h2 {
+	font-size: 20px;
+	font-weight: 800;
+	margin-right: 20px;
+	text-decoration: none;
+}
+
+.sidebarOptions:hover {
+	background-color: #e8f5fe;
+	border-radius: 30px;
+	color: var(--deenify-color);
+	transition: color 100ms ease-out;
+}
+
+.sidebarOptions--active {
+	color: var(--deenify-color);
+}

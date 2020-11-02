@@ -1,0 +1,24 @@
+.sidebar {
+	border-right: 1px solid var(--deenify-background);
+	flex: 0.3;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-top: 20px;
+}
+
+.sidebar-deenify-icon {
+	color: var(--deenify-color);
+	font-size: 30px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
+.sidebar-post-button {
+	background-color: var(--deenify-color) !important;
+	border: none !important;
+	color: white !important;
+	font-weight: 900 !important;
+	text-transform: inherit !important;
+	border-radius: 30px !important;
+	height: 50px !important;
+	margin-top: 20px !important;
+}

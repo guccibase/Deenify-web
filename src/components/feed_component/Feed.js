@@ -3,12 +3,13 @@ import '../feed_component/Feed.css';
 import PostBox from '../post_component/postbox_component/PostBox';
 import Post from '../post_component/Post';
 
-function Feed() {
+function Feed({ error }) {
 	return (
 		<div className="feed">
 			<div className="feed-header">
 				{/* Header */}
 				<h2>Home</h2>
+				<h4>{error}</h4>
 			</div>
 			<div>
 				{/* Post box */}

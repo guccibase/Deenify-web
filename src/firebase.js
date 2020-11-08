@@ -1,16 +1,17 @@
-import firebase from 'firebase/app';
+import firebase from 'firebase';
 import 'firebase/auth';
 
 const app = firebase.initializeApp({
-	apiKey: 'AIzaSyDRDIQ9A9081JEToP64greQ1Mnmzf6vxCY',
-	authDomain: 'deenify-web.firebaseapp.com',
-	databaseURL: 'https://deenify-web.firebaseio.com',
-	projectId: 'deenify-web',
-	storageBucket: 'deenify-web.appspot.com',
-	messagingSenderId: '904443819980',
-	appId: '1:904443819980:web:a4aada827b098788850f69',
-	measurementId: 'G-9SJ6VF6F8T'
+	apiKey: 'AIzaSyAa1QJRM6s8IA2sWno36LpebARF9PSN8M4',
+	authDomain: 'umma-26555.firebaseapp.com',
+	databaseURL: 'https://umma-26555.firebaseio.com',
+	projectId: 'umma-26555',
+	storageBucket: 'umma-26555.appspot.com',
+	messagingSenderId: '158514191600',
+	appId: '1:158514191600:web:961d83be53d396cb2e7635',
+	measurementId: 'G-37FXHT4RVW'
 });
 
 export const auth = app.auth();
+export const db = app.firestore();
 export default app;

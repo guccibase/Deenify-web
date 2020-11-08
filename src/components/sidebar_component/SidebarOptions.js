@@ -10,6 +10,7 @@ function SidebarOptions({ active, text, icon }) {
 				<h2>{text}</h2>
 			</div>
 		</a>
+		
 	);
 }
 

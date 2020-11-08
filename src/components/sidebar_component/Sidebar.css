@@ -1,9 +1,12 @@
 .sidebar {
-	border-right: 1px solid var(--deenify-background);
+	border: 1px solid var(--deenify-background);
 	flex: 0.3;
 	padding-left: 20px;
 	padding-right: 20px;
-	margin-top: 20px;
+}
+
+.sidebar-column {
+	padding: 10px;
 }
 
 .sidebar-deenify-icon {

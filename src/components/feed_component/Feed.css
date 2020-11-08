@@ -1,6 +1,7 @@
 .feed {
 	flex: 0.4;
-	border-right: 1px solid var(--deenify-background);
+	padding: 10px;
+	border: 1px solid var(--deenify-background);
 	min-width: fit-content;
 	overflow-y: scroll;
 	-ms-overflow-style: none;
@@ -16,10 +17,14 @@
 	top: 0;
 	background-color: white;
 	z-index: 100px;
-	border: 1px solid var(--deenify-background);
-	padding: 15px 20px;
+	/* border: 1px solid var(--deenify-background); */
+	/* padding: 15px 20px; */
 }
 
 .feed-header > h2 {
 	font-size: 20px;
+}
+
+.searchIcon {
+	color: var(--deenify-color);
 }

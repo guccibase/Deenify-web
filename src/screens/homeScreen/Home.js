@@ -11,6 +11,7 @@ function Home() {
 	const [ error, setError ] = useState('');
 	const { currentUser, signout } = useAuth();
 	const history = useHistory();
+
 	async function handleLogOut() {
 		setError('');
 		try {
@@ -20,6 +21,7 @@ function Home() {
 			setError('Failed to log out');
 		}
 	}
+
 	return (
 		<div className="home">
 			{/* Sidebar */}
@@ -31,7 +33,7 @@ function Home() {
 					Log Out
 				</Button>
 				<strong>Email:</strong>
-				{currentUser.email}
+				{currentUser.uid}
 			</div>
 			{/* Feed */}
 			<Feed error={error} />

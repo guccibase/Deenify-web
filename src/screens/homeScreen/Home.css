@@ -1,6 +1,8 @@
 body {
 	--deenify-color: #2196f3;
 	--deenify-background: #e6ecf0;
+	--deenify-primaryText: black;
+	--deenify-secondaryText: grey;
 }
 
 .home {

@@ -1,0 +1,13 @@
+.login {
+	margin-top: 100px;
+}
+.signin_btn {
+	background-color: var(--deenify-color) !important;
+}
+.signup-link {
+	color: var(--deenify-color) !important;
+}
+
+.forgot-password-link {
+	color: var(--deenify-color) !important;
+}

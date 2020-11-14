@@ -1,4 +1,5 @@
 import React from 'react';
+import '../PrivacyPolicy.css'
 
 function PrivacyPolicySections({ header, subheader, notes }) {
 	return (
@@ -12,6 +13,7 @@ function PrivacyPolicySections({ header, subheader, notes }) {
 			<div className="privacy_section_notes">
 				<p>{notes}</p>
 			</div>
+			<hr className='horizontal-rule'/>
 		</div>
 	);
 }

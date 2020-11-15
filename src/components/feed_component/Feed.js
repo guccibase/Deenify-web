@@ -11,11 +11,14 @@ function Feed({ error }) {
 	const { currentUser } = useAuth();
 
 	useEffect(() => {
+		console.log('feed posts');
+
 		db
 			.collection('feeds')
 			.doc(currentUser.uid)
 			.collection('userFeed')
 			.orderBy('timestamp', 'desc')
+			.limit(100)
 			.onSnapshot((snapshot) => setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))));
 	}, []);
 
@@ -42,6 +45,8 @@ function Feed({ error }) {
 				{posts.map((post) => (
 					<Post
 						key={post.id}
+						postId={post.id}
+						postType="feedPost"
 						authorId={post.data.authorId}
 						image={post.data.imageUrl}
 						timeStamp={post.data.timestamp}

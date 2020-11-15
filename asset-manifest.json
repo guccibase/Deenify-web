@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/Deenify-web/static/css/main.96e6d2f8.chunk.css",
+    "main.js": "/Deenify-web/static/js/main.d08ecf68.chunk.js",
+    "main.js.map": "/Deenify-web/static/js/main.d08ecf68.chunk.js.map",
+    "runtime-main.js": "/Deenify-web/static/js/runtime-main.d4ab516a.js",
+    "runtime-main.js.map": "/Deenify-web/static/js/runtime-main.d4ab516a.js.map",
+    "static/css/2.2a86faee.chunk.css": "/Deenify-web/static/css/2.2a86faee.chunk.css",
+    "static/js/2.b618f53c.chunk.js": "/Deenify-web/static/js/2.b618f53c.chunk.js",
+    "static/js/2.b618f53c.chunk.js.map": "/Deenify-web/static/js/2.b618f53c.chunk.js.map",
+    "static/js/3.5582bc3e.chunk.js": "/Deenify-web/static/js/3.5582bc3e.chunk.js",
+    "static/js/3.5582bc3e.chunk.js.map": "/Deenify-web/static/js/3.5582bc3e.chunk.js.map",
+    "index.html": "/Deenify-web/index.html",
+    "precache-manifest.521987d26a623851711eb2148c20bc1a.js": "/Deenify-web/precache-manifest.521987d26a623851711eb2148c20bc1a.js",
+    "service-worker.js": "/Deenify-web/service-worker.js",
+    "static/css/2.2a86faee.chunk.css.map": "/Deenify-web/static/css/2.2a86faee.chunk.css.map",
+    "static/css/main.96e6d2f8.chunk.css.map": "/Deenify-web/static/css/main.96e6d2f8.chunk.css.map",
+    "static/js/2.b618f53c.chunk.js.LICENSE.txt": "/Deenify-web/static/js/2.b618f53c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d4ab516a.js",
+    "static/css/2.2a86faee.chunk.css",
+    "static/js/2.b618f53c.chunk.js",
+    "static/css/main.96e6d2f8.chunk.css",
+    "static/js/main.d08ecf68.chunk.js"
+  ]
+}

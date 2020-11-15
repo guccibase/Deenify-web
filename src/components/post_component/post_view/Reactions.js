@@ -5,7 +5,6 @@ function Reactions({ postId, postType }) {
 	const [ likesCount, setLikesCount ] = useState();
 	const [ commentsCount, setCommentsCount ] = useState();
 
-	//console.log(postId);
 	useEffect(() => {
 		console.log('reactions');
 
@@ -38,11 +37,11 @@ function Reactions({ postId, postType }) {
 
 	return (
 		<div className="reactions">
-			<p className="reactions-count">
+			<p className="reactions-count likes-count">
 				{likesCount}
 				<span className="reactions" />Likes
 			</p>
-			<p className="reactions-count">
+			<p className="reactions-count comments-count">
 				{commentsCount} <span className="reactions" /> Comments
 			</p>
 		</div>

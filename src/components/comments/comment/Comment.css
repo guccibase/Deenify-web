@@ -1,0 +1,29 @@
+.comment {
+	display: flex;
+	margin: 5px;
+}
+
+.comment-details-section {
+	padding: 0 10px;
+}
+.comment-details {
+	padding: 5px;
+	background-color: var(--deenify-background);
+	border-radius: 12px;
+}
+
+.comment_avatar {
+	padding-left: 0px;
+}
+
+.commenter-name {
+	font-size: 15px;
+	margin: 0px;
+}
+
+.comment-time {
+	margin: 0px;
+	padding-left: 5px;
+	font-size: 10px;
+	color: var(--deenify-secondaryText);
+}

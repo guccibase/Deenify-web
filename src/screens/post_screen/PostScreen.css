@@ -1,0 +1,21 @@
+.post-screen {
+	display: flex;
+	height: 100vh;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 10px;
+}
+
+.postScreen-image {
+	width: 700px;
+}
+.post-details {
+	flex: 0.4;
+	padding: 10px;
+	border: 1px solid var(--deenify-background);
+	min-width: 700px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}

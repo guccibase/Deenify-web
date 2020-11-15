@@ -1,0 +1,25 @@
+.comment_input {
+	align-items: center;
+	background-color: var(--deenify-background);
+	padding: 10px;
+	border-radius: 20px;
+	margin-top: 20px;
+
+	/* margin-left: 20px; */
+}
+
+.comment-avatar {
+	padding: 23px;
+	height: 40px;
+}
+.comment_input > input[type=text] {
+	background-color: var(--deenify-background);
+	inline-size: 480px;
+	border: none;
+	outline-width: 0;
+}
+
+.write-comment {
+	display: flex;
+	padding-bottom: 10px;
+}

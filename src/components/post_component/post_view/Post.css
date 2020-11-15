@@ -6,7 +6,8 @@
 }
 .post_body > img {
 	border-radius: 20px;
-	width: 600px;
+	/* width: 600px; */
+	align-content: center;
 }
 .post-header {
 	display: flex;
@@ -61,14 +62,19 @@
 	margin: 0px;
 	display: flex;
 	justify-content: space-between;
+	cursor: pointer;
+
 	/* color: var(--deenify-secondaryText); */
 }
 
 .post_footer {
 	display: flex;
 	justify-content: space-between;
-	padding: 5px;
+	padding-top: 5px;
 	color: var(--deenify-secondaryText);
 	font-weight: 500;
 	font-size: 13px;
+}
+.footerbtn {
+	cursor: pointer;
 }

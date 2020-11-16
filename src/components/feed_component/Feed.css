@@ -2,10 +2,11 @@
 	flex: 0.4;
 	padding: 10px;
 	border: 1px solid var(--deenify-background);
-	min-width: 690px;
+	min-width: 660px;
 	overflow-y: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	min-height: 300px;
 	/* width: 600px; */
 }
 

@@ -8,13 +8,13 @@
 }
 
 .postScreen-image {
-	width: 700px;
+	width: 600px;
 }
 .post-details {
 	flex: 0.4;
 	padding: 10px;
 	border: 1px solid var(--deenify-background);
-	min-width: 700px;
+	min-width: 670px;
 	overflow-y: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;

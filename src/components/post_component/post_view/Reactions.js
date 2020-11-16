@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../../firebase';
 
-function Reactions({ postId, postType }) {
+function Reactions({ postId, postType, click }) {
 	const [ likesCount, setLikesCount ] = useState();
 	const [ commentsCount, setCommentsCount ] = useState();
 
@@ -41,7 +41,7 @@ function Reactions({ postId, postType }) {
 				{likesCount}
 				<span className="reactions" />Likes
 			</p>
-			<p className="reactions-count comments-count">
+			<p onClick={click} className="reactions-count comments-count">
 				{commentsCount} <span className="reactions" /> Comments
 			</p>
 		</div>

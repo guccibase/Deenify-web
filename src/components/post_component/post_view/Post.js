@@ -43,6 +43,7 @@ function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 		localStorage.setItem('timeStamp', JSON.stringify(timeStamp));
 		localStorage.setItem('postText', JSON.stringify(postText));
 		history.push('/postScreen');
+		this.setState();
 	};
 
 	return (

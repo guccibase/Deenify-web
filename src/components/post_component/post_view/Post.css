@@ -6,8 +6,7 @@
 }
 .post_body > img {
 	border-radius: 20px;
-	/* width: 600px; */
-	align-content: center;
+	width: 630px;
 }
 .post-header {
 	display: flex;
@@ -62,9 +61,8 @@
 	margin: 0px;
 	display: flex;
 	justify-content: space-between;
+	color: var(--deenify-secondaryText);
 	cursor: pointer;
-
-	/* color: var(--deenify-secondaryText); */
 }
 
 .post_footer {

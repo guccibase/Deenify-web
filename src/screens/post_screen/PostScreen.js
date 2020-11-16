@@ -62,7 +62,7 @@ function PostScreen() {
 				<div className="post_body">
 					<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
 					<PostDescription postText={postText} />
-					<img className="post-image" width="660px" src={image} alt="" />
+					<img className="post-image" src={image} alt="" />
 					{/* <Reactions postId={postId} /> */}
 					<Divider />
 					<Footer />

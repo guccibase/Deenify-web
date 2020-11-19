@@ -25,3 +25,11 @@
 	height: 50px !important;
 	margin-top: 20px !important;
 }
+
+.sideSpace {
+	border: 1px solid var(--deenify-background);
+	flex: 0.3;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: var(--deenify-background);
+}

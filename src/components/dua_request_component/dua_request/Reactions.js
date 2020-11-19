@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../../firebase';
+import './DuaRequest.css';
 
-function Reactions({ postId, postType }) {
+function Reactions({ requestId, requesterId }) {
 	const [ likesCount, setLikesCount ] = useState();
 	const [ commentsCount, setCommentsCount ] = useState();
 
 	//console.log(postId);
 	useEffect(() => {
-		var likes = db.collection('allPosts').doc(postId);
+		var likes = db.collection('duaRequests').doc(requesterId).collection('request').doc(requestId);
 
 		likes
 			.get()
@@ -23,7 +24,7 @@ function Reactions({ postId, postType }) {
 				console.log('Error getting document:', error);
 			});
 
-		var Comments = db.collection('comments').doc(postId).collection('postComments');
+		var Comments = db.collection('comments').doc(requestId).collection('duaRequestComments');
 
 		Comments.get()
 			.then((doc) => {
@@ -38,7 +39,7 @@ function Reactions({ postId, postType }) {
 		<div className="reactions">
 			<p className="reactions-count">
 				{likesCount}
-				<span className="reactions" />Likes
+				<span className="reactions" />Will make dua
 			</p>
 			<p className="reactions-count">
 				{commentsCount} <span className="reactions" /> Comments

@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import './Home.css';
+import './DuaRequestScreen.css';
 import Sidebar from '../../components/sidebar_component/SideBar';
-import Feed from '../../components/feed_component/Feed';
+import DuaRequests from '../../components/dua_request_component/dua_requests/DuaRequests';
 import TrendingPosts from '../../components/trendingposts_component/TrendingPosts';
 import { Button, Alert, Card } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { useHistory } from 'react-router-dom';
 
-function Home() {
+function DuaRequestScreen() {
 	const [ error, setError ] = useState('');
 	const { currentUser, signout } = useAuth();
 	const history = useHistory();
-	localStorage.setItem('screen', JSON.stringify('Home'));
+	localStorage.setItem('screen', JSON.stringify('Dua Requests'));
 
 	async function handleLogOut() {
 		setError('');
@@ -29,15 +29,9 @@ function Home() {
 			<div>
 				<Sidebar />
 				{/* logout */}
-
-				<Button variant="link" onClick={handleLogOut}>
-					Log Out
-				</Button>
-				<strong>Email:</strong>
-				{currentUser.uid}
 			</div>
 			{/* Feed */}
-			<Feed error={error} />
+			<DuaRequests />
 
 			{/* Widgets */}
 			<TrendingPosts />
@@ -45,4 +39,4 @@ function Home() {
 	);
 }
 
-export default Home;
+export default DuaRequestScreen;

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './PostScreen.css';
+import './DuaRequestScreen.css';
 import Header from '../../components/post_component/post_view/Header';
-import Footer from '../../components/post_component/post_view/Footer';
+import Footer from '../../components/dua_request_component/dua_request/Footer';
 import Divider from '../../components/common/divider/Divider';
 import PostDescription from '../../components/post_component/post_view/PostDescription';
 import { db } from '../../firebase';
@@ -9,19 +9,19 @@ import WriteComment from '../../components/comments/write_comment/WriteComment';
 import Comment from '../../components/comments/comment/Comment';
 import SideSpace from '../../components/sidebar_component/SideSpace';
 import TrendingPosts from '../../components/trendingposts_component/TrendingPosts';
-import Reactions from '../../components/post_component/post_view/Reactions';
+import Reactions from '../../components/dua_request_component/dua_request/Reactions';
 
-function PostScreen() {
+function DuaRequestView() {
 	const [ comments, setComments ] = useState([]);
-	const [ postId, setpostId ] = useState(JSON.parse(localStorage.getItem('postId')));
+	const [ requestId, setRequestId ] = useState(JSON.parse(localStorage.getItem('requestId')));
 	const [ displayName, setdisplayName ] = useState('');
 	const [ avatar, setavatar ] = useState('');
-	const [ image, setimage ] = useState('');
 	const [ timeStamp, settimeStamp ] = useState('');
-	const [ postText, setpostText ] = useState('');
+	const [ requestText, setRequestText ] = useState(JSON.parse(localStorage.getItem('requestText')));
+	const [ requesterId, setRequesterId ] = useState(JSON.parse(localStorage.getItem('requesterId')));
 
 	useEffect(() => {
-		setpostId(JSON.parse(localStorage.getItem('postId')));
+		setRequestId(JSON.parse(localStorage.getItem('requestId')));
 		console.log('comments');
 		// if (localStorage && localStorage.getItem('postId')) {
 		// 	setpostId(JSON.parse(localStorage.getItem('postId')));
@@ -32,20 +32,18 @@ function PostScreen() {
 		if (localStorage && localStorage.getItem('avatar')) {
 			setavatar(JSON.parse(localStorage.getItem('avatar')));
 		}
-		if (localStorage && localStorage.getItem('image')) {
-			setimage(JSON.parse(localStorage.getItem('image')));
-		}
+
 		if (localStorage && localStorage.getItem('timeStamp')) {
 			settimeStamp(JSON.parse(localStorage.getItem('timeStamp')));
 		}
-		if (localStorage && localStorage.getItem('postText')) {
-			setpostText(JSON.parse(localStorage.getItem('postText')));
+		if (localStorage && localStorage.getItem('requestText')) {
+			setRequestText(JSON.parse(localStorage.getItem('requestText')));
 		}
 
 		db
 			.collection('comments')
-			.doc(postId)
-			.collection('postComments')
+			.doc(requestId)
+			.collection('duaRequestComments')
 			.orderBy('timestamp', 'desc')
 			.onSnapshot((snapshot) => setComments(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))));
 
@@ -53,14 +51,13 @@ function PostScreen() {
 	}, []);
 
 	return (
-		<div className="post-screen">
+		<div className="request-view">
 			<SideSpace />
-			<div className="post-details">
-				<div className="post_body">
+			<div className="request-details">
+				<div className="request_body">
 					<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
-					<PostDescription postText={postText} />
-					<img className="post-image" src={image} alt="" />
-					<Reactions postId={postId} postType="feedPost" />
+					<PostDescription postText={requestText} />
+					<Reactions requestId={requestId} requesterId={requesterId} />
 					<Divider />
 					<Footer />
 					{comments.map((comment) => (
@@ -80,4 +77,4 @@ function PostScreen() {
 	);
 }
 
-export default PostScreen;
+export default DuaRequestView;

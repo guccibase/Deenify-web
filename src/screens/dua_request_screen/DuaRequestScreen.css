@@ -1,0 +1,41 @@
+#dua-hands {
+	width: 150px;
+	height: 150px;
+	background-image: '/Users/tahirunasuru/dev/deenify-web/deenify/icons/dua-hands.png';
+	background-size: cover;
+	background-color: #eee;
+}
+
+body {
+	--deenify-color: #2196f3;
+	--deenify-background: #e6ecf0;
+	--deenify-primaryText: black;
+	--deenify-secondaryText: grey;
+}
+
+.dua-request-screen {
+	display: flex;
+	height: 100vh;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 0 10px;
+}
+
+.request-view {
+	display: flex;
+	height: 100vh;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.request-details {
+	flex: 0.4;
+	padding: 20px 10px;
+	border: 1px solid var(--deenify-background);
+	min-width: 670px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}

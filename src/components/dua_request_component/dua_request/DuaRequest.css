@@ -1,0 +1,69 @@
+.request {
+	display: flex;
+	align-items: flex-start;
+	border-bottom: 2px solid var(--deenify-background);
+	padding: 10px;
+}
+.request_body > img {
+	border-radius: 20px;
+	width: 630px;
+}
+.post-header {
+	display: flex;
+	justify-content: space-between;
+}
+.post-header-items {
+	display: flex;
+}
+
+.post_headerText {
+	font-size: 15px;
+	margin: 0px;
+}
+
+.post-header-name-and-time {
+	padding-left: 10px;
+}
+
+.post-header-time {
+	margin: 0px;
+	padding-left: 5px;
+	font-size: 10px;
+	color: var(--deenify-secondaryText);
+}
+
+.reactions {
+	display: flex;
+	justify-content: space-between;
+	font-size: 13px;
+	padding: 5px;
+	color: var(--deenify-secondaryText);
+}
+.reactions-count {
+	margin: 0px;
+	display: flex;
+	justify-content: space-between;
+	color: var(--deenify-secondaryText);
+	cursor: pointer;
+}
+
+.post_footer {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 5px;
+	color: var(--deenify-secondaryText);
+	font-weight: 500;
+	font-size: 13px;
+}
+.footerbtn {
+	cursor: pointer;
+}
+
+.dua-hands {
+	height: 19px;
+	padding-right: 5px;
+}
+
+.will-make-dua {
+	justify-content: space-around;
+}

@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './Post.css';
+import '../../post_component/post_view/Post.css';
 import Header from './Header';
 import Reactions from './Reactions';
 import Footer from './Footer';
 import Divider from '../../common/divider/Divider';
-import PostImage from './PostImage';
-import PostDescription from './PostDescription';
+import PostDescription from '../../post_component/post_view/PostDescription';
 import { db } from '../../../firebase';
 import { useHistory } from 'react-router-dom';
 import WriteComment from '../../comments/write_comment/WriteComment';
 
-function Post({ postId, postType, authorId, image, timeStamp, postText }) {
+function DuaRequest({ requestId, postType, authorId, timeStamp, requestText }) {
 	const [ displayName, setDisplayName ] = useState('');
 	const [ avatar, setAvatar ] = useState('');
 	const history = useHistory();
@@ -38,20 +37,20 @@ function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 	const handleClick = (event) => {
 		localStorage.setItem('displayName', JSON.stringify(displayName));
 		localStorage.setItem('avatar', JSON.stringify(avatar));
-		localStorage.setItem('postId', JSON.stringify(postId));
-		localStorage.setItem('image', JSON.stringify(image));
+		localStorage.setItem('requestId', JSON.stringify(requestId));
 		localStorage.setItem('timeStamp', JSON.stringify(timeStamp));
-		localStorage.setItem('postText', JSON.stringify(postText));
-		history.push('/postScreen');
+		localStorage.setItem('requestText', JSON.stringify(requestText));
+		localStorage.setItem('requesterId', JSON.stringify(authorId));
+
+		history.push('/requestView');
 	};
 
 	return (
 		<div className="post">
 			<div className="post_body" onClick={handleClick}>
 				<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
-				<PostDescription postText={postText} />
-				<PostImage image={image} postWidth="600px" />
-				<Reactions postType={postType} postId={postId} />
+				<PostDescription postText={requestText} />
+				<Reactions requestId={requestId} requesterId={authorId} />
 				<Divider />
 				<Footer />
 				<WriteComment avatar={avatar} />
@@ -60,4 +59,4 @@ function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 	);
 }
 
-export default Post;
+export default DuaRequest;

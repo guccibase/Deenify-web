@@ -1,0 +1,14 @@
+.recent-articles {
+	flex: 0.4;
+	padding: 10px;
+	border: 1px solid var(--deenify-background);
+	min-width: 660px;
+	overflow-y: scroll;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+	/* width: 600px; */
+}
+
+.coming-soon {
+	text-align: center;
+}

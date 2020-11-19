@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Sidebar.css';
 import { ic_home } from 'react-icons-kit/md/ic_home';
 import { ic_search } from 'react-icons-kit/md/ic_search';
@@ -17,7 +17,7 @@ function SideBar() {
 				{/* Twitter icon  */}
 				<AppTitle />
 				{/* Sidebar */}
-				<SidebarOption active text="Home" icon={ic_home} />
+				<SidebarOption text="Home" icon={ic_home} />
 				<SidebarOption text="Articles" icon={ic_search} />
 				<SidebarOption text="Dua Requests" icon={ic_mail_outline} />
 				<SidebarOption text="Notifications" icon={ic_notifications_none} />

@@ -5,23 +5,32 @@ import Post from '../post_component/post_view/Post';
 import SearchIcon from '@material-ui/icons/Search';
 import { db } from '../../firebase';
 import { useAuth } from '../../contexts/AuthContext';
+import { useHistory } from 'react-router-dom';
+import { PostsProvider, usePosts } from '../../contexts/PostsContext';
 
 function Feed({ error }) {
 	const [ posts, setPosts ] = useState([]);
 	const { currentUser } = useAuth();
+	const { setPostList, postList } = usePosts();
+	const history = useHistory();
 
 	useEffect(() => {
-		console.log('feed posts');
+		console.log('feed loaded');
+		console.log(postList.length);
 
-		db
-			.collection('feeds')
-			.doc(currentUser.uid)
-			.collection('userFeed')
-			.orderBy('timestamp', 'desc')
-			.limit(100)
-			.onSnapshot((snapshot) => setPosts(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))));
+		if (postList.length === 0) {
+			console.log('posts fetching');
+
+			db
+				.collection('feeds')
+				.doc(currentUser.uid)
+				.collection('userFeed')
+				.orderBy('timestamp', 'desc')
+				.limit(100)
+				.onSnapshot((snapshot) => setPostList(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))));
+		}
+		//setPostList(posts);
 	}, []);
-
 	// console.log('test test');
 	// posts.map((post) => {
 	// 	let date = new Date(post.data.timestamp.seconds * 1000).toLocaleString();
@@ -42,7 +51,7 @@ function Feed({ error }) {
 				{/* Post box */}
 				<PostBox />
 				{/* posts */}
-				{posts.map((post) => (
+				{postList.map((post) => (
 					<Post
 						key={post.id}
 						postId={post.id}

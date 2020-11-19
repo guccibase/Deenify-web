@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Avatar, Input } from '@material-ui/core';
-import '../postbox_component/PostBox.css';
+import './RequestBox.css';
 import { db } from '../../../firebase';
 import { useAuth } from '../../../contexts/AuthContext';
 
-function PostBox({}) {
+function RequestBox({}) {
 	// const [displayName, setDisplayName] = useState('');
 	const [ avatar, setAvatar ] = useState('');
 	const { currentUser } = useAuth();
@@ -30,19 +30,18 @@ function PostBox({}) {
 	}, []);
 
 	return (
-		<div className="postBox">
+		<div className="requestBox">
 			<form>
-				<div className="postBox_input">
+				<div className="requestBox_input">
 					<Avatar src={avatar} />
-					<div className="post-textarea">
-						<textarea placeholder="New post" rows="4" cols="50" />
+					<div className="request-text-area">
+						<textarea placeholder="New request" rows="2" cols="50" />
 					</div>
 				</div>
-
-				<Button className="postBox_button">Post</Button>
+				<Button className="postBox_button">Submit</Button>
 			</form>
 		</div>
 	);
 }
 
-export default PostBox;
+export default RequestBox;

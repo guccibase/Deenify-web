@@ -1,4 +1,4 @@
-.feed {
+.dua_requests {
 	flex: 0.4;
 	padding: 10px;
 	border: 1px solid var(--deenify-background);
@@ -30,17 +30,19 @@
 	outline-width: 0;
 }
 
-.feed-header {
+.request-header {
 	position: sticky;
 	top: 0;
+	justify-content: center;
 	background-color: white;
 	z-index: 100px;
 	/* border: 1px solid var(--deenify-background); */
 	/* padding: 15px 20px; */
 }
 
-.feed-header > h2 {
-	font-size: 20px;
+.request-header > h4 {
+	font-size: 40px;
+	text-align: center;
 }
 
 .searchIcon {

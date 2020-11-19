@@ -1,34 +1,22 @@
-.postBox {
+.requestBox {
 	padding-bottom: 10px;
 	border: 8px solid var(--deenify-background);
 	padding-right: 10px;
 	border-radius: 20px;
 }
 
-.postBox > form {
+.requestBox > form {
 	display: flex;
 	flex-direction: column;
 }
 
-.postBox_input {
-	padding: 20px;
+.requestBox_input {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
 	display: flex;
 }
-.post-textarea {
-	padding-left: 20px;
-}
-.post-textarea > textarea {
-	border-style: none;
-	border-color: Transparent;
-	overflow: auto;
-	outline-color: var(--deenify-color);
-	width: 500px;
-}
 
-.postBox_imageInput {
-	border: none;
-	padding: 10px;
-}
 .postBox_button {
 	background-color: var(--deenify-color) !important;
 	border: none !important;
@@ -39,4 +27,15 @@
 	height: 50px !important;
 	width: 80px;
 	margin-left: auto !important;
+}
+
+.request-text-area {
+	padding-left: 10px;
+}
+.request-text-area > textarea {
+	border-style: none;
+	border-color: Transparent;
+	overflow: auto;
+	outline-color: var(--deenify-color);
+	width: 500px;
 }

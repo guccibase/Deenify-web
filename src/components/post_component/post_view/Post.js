@@ -9,11 +9,13 @@ import PostDescription from './PostDescription';
 import { db } from '../../../firebase';
 import { useHistory } from 'react-router-dom';
 import WriteComment from '../../comments/write_comment/WriteComment';
+import PostScreen from '../../../screens/post_screen/PostScreen';
 
 function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 	const [ displayName, setDisplayName ] = useState('');
 	const [ avatar, setAvatar ] = useState('');
 	const history = useHistory();
+	const [ open, setOpen ] = useState(false);
 
 	useEffect(() => {
 		var docRef = db.collection('users').doc(authorId);
@@ -36,25 +38,32 @@ function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 	}, []);
 
 	const handleClick = (event) => {
-		localStorage.setItem('displayName', JSON.stringify(displayName));
-		localStorage.setItem('avatar', JSON.stringify(avatar));
-		localStorage.setItem('postId', JSON.stringify(postId));
-		localStorage.setItem('image', JSON.stringify(image));
-		localStorage.setItem('timeStamp', JSON.stringify(timeStamp));
-		localStorage.setItem('postText', JSON.stringify(postText));
-		history.push('/postScreen');
+		setOpen(true);
+		//	history.push('/postScreen');
 	};
 
 	return (
-		<div className="post">
-			<div className="post_body" onClick={handleClick}>
-				<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
-				<PostDescription postText={postText} />
-				<PostImage image={image} postWidth="600px" />
-				<Reactions postType={postType} postId={postId} />
-				<Divider />
-				<Footer />
-				<WriteComment avatar={avatar} />
+		<div>
+			<PostScreen
+				open={open}
+				close={setOpen}
+				displayName={displayName}
+				avatar={avatar}
+				postId={postId}
+				image={image}
+				timeStamp={timeStamp}
+				postText={postText}
+			/>
+			<div className="post">
+				<div className="post_body" onClick={handleClick}>
+					<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
+					<PostDescription postText={postText} />
+					<PostImage image={image} postWidth="600px" />
+					<Reactions postType={postType} postId={postId} />
+					<Divider />
+					<Footer />
+					<WriteComment avatar={avatar} />
+				</div>
 			</div>
 		</div>
 	);

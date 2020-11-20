@@ -3,15 +3,13 @@ import Header from '../post_component/post_view/Header';
 import Reactions from '../post_component/post_view/Reactions';
 import Footer from '../post_component/post_view/Footer';
 import Divider from '../common/divider/Divider';
-import PostImage from '../post_component/post_view/PostImage';
-import PostDescription from '../post_component/post_view/PostDescription';
+import PostScreen from '../../screens/post_screen/PostScreen';
 import { db } from '../../firebase';
-import { useHistory } from 'react-router-dom';
 
 function TrendingPost({ postId, postType, authorId, image, timeStamp, postText }) {
 	const [ displayName, setDisplayName ] = useState('');
 	const [ avatar, setAvatar ] = useState('');
-	const history = useHistory();
+	const [ open, setOpen ] = useState(false);
 
 	useEffect(() => {
 		var docRef = db.collection('users').doc(authorId);
@@ -34,24 +32,30 @@ function TrendingPost({ postId, postType, authorId, image, timeStamp, postText }
 	}, []);
 
 	const handleClick = () => {
-		localStorage.setItem('postId', JSON.stringify(postId));
-		localStorage.setItem('displayName', JSON.stringify(displayName));
-		localStorage.setItem('avatar', JSON.stringify(avatar));
-		localStorage.setItem('image', JSON.stringify(image));
-		localStorage.setItem('timeStamp', JSON.stringify(timeStamp));
-		localStorage.setItem('postText', JSON.stringify(postText));
-		history.push('/postScreen');
+		setOpen(true);
 	};
 	return (
-		<div className="trending_post">
-			<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
-			<div className="trendingPost_Description">
-				<p onClick={handleClick}>{postText}</p>
-				<img onClick={handleClick} className="trendingPost-image" src={image} alt="" />
+		<div>
+			<PostScreen
+				open={open}
+				close={setOpen}
+				displayName={displayName}
+				avatar={avatar}
+				postId={postId}
+				image={image}
+				timeStamp={timeStamp}
+				postText={postText}
+			/>
+			<div className="trending_post">
+				<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
+				<div className="trendingPost_Description">
+					<p onClick={handleClick}>{postText}</p>
+					<img onClick={handleClick} className="trendingPost-image" src={image} alt="" />
+				</div>
+				<Reactions click={handleClick} postType={postType} postId={postId} />
+				<Divider />
+				<Footer click={handleClick} />
 			</div>
-			<Reactions click={handleClick} postType={postType} postId={postId} />
-			<Divider />
-			<Footer click={handleClick} />
 		</div>
 	);
 }

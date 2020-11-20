@@ -46,3 +46,12 @@
 	height: 50px;
 	border-radius: 10px;
 }
+.trending-column::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.trending-column {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}

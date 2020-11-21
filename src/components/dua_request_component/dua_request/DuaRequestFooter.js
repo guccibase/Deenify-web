@@ -3,7 +3,7 @@ import ChatBubbleOutlineIcon from '@material-ui/icons/ChatBubbleOutline';
 import duahands from '/Users/tahirunasuru/dev/deenify-web/deenify/src/icons/duahands.png';
 import ShareIcon from '@material-ui/icons/Share';
 
-function Footer({ click }) {
+function DuaRequestFooter({ click }) {
 	return (
 		<div className="post_footer">
 			<div className="will-make-dua footerbtn">
@@ -22,4 +22,4 @@ function Footer({ click }) {
 	);
 }
 
-export default Footer;
+export default DuaRequestFooter;

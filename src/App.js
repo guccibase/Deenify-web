@@ -12,6 +12,7 @@ import { SidebarProvider } from './contexts/SidebarContext';
 import ArticlesScreen from './screens/articles/ArticlesScreen';
 import DuaRequestScreen from './screens/dua_request_screen/DuaRequestScreen';
 import DuaRequestView from './screens/dua_request_screen/DuaRequestView';
+import NotificationsScreen from './screens/notifications_screen/NotificationsScreen';
 
 function App() {
 	return (
@@ -25,11 +26,10 @@ function App() {
 							<Route path="/login" component={Login} />
 							<Route path="/signup" component={SignUp} />
 							<Route path="/forgotPassword" component={ForgotPassword} />
-							<Route path="/postScreen" component={PostScreen} />
 							<Route path="/Articles" component={ArticlesScreen} />
 							<Route path="/Home" component={Home} />
 							<Route path="/Dua Requests" component={DuaRequestScreen} />
-							<Route path="/requestView" component={DuaRequestView} />
+							<Route path="/Notifications" component={NotificationsScreen} />
 						</Switch>
 					</SidebarProvider>
 				</PostsProvider>

@@ -2,17 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './DuaRequests.css';
 import RequestBox from '../submit_request_box/RequestBox';
 import DuaRequest from '../dua_request/DuaRequest';
-import SearchIcon from '@material-ui/icons/Search';
 import { db } from '../../../firebase';
 import { useAuth } from '../../../contexts/AuthContext';
-import { useHistory } from 'react-router-dom';
 import { usePosts } from '../../../contexts/PostsContext';
 
-function DuaRequests({ error }) {
-	const [ requests, setRequests ] = useState([]);
+function DuaRequests() {
 	const { currentUser } = useAuth();
 	const { requestList, setRequestList } = usePosts();
-	const history = useHistory();
 
 	useEffect(() => {
 		console.log('requests loaded');

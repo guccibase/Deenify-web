@@ -22,7 +22,6 @@ function Home() {
 			setError('Failed to log out');
 		}
 	}
-
 	return (
 		<div className="home">
 			{/* Sidebar */}

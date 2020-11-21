@@ -29,6 +29,11 @@ function DuaRequestScreen() {
 			<div>
 				<Sidebar />
 				{/* logout */}
+				<Button variant="link" onClick={handleLogOut}>
+					Log Out
+				</Button>
+				<strong>Email:</strong>
+				{currentUser.uid}
 			</div>
 			{/* Feed */}
 			<DuaRequests />

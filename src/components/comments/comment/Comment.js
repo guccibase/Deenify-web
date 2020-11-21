@@ -3,6 +3,7 @@ import { Avatar } from '@material-ui/core';
 import { db } from '../../../firebase';
 
 import './Comment.css';
+import UserAvatar from '../../common/avatars/UserAvatar';
 
 function Comment({ commentId, authorId, timeStamp, commentText }) {
 	const [ avatar, setAvatar ] = useState('https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg');
@@ -35,7 +36,7 @@ function Comment({ commentId, authorId, timeStamp, commentText }) {
 	return (
 		<div className="comment">
 			<div className="comment_avatar">
-				<Avatar src={avatar} />
+				<UserAvatar image={avatar} />
 			</div>
 			<div className="comment-details-section">
 				<div className="comment-details">

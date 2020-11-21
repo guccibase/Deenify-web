@@ -1,15 +1,12 @@
 import React from 'react';
 import { ic_more_horiz } from 'react-icons-kit/md/ic_more_horiz';
 import Icon from 'react-icons-kit';
-import { Avatar } from '@material-ui/core';
-
+import UserAvatar from '../../common/avatars/UserAvatar';
 function Header({ avatar, displayName, timeStamp }) {
 	return (
 		<div className="post-header">
 			<div className="post-header-items">
-				<div className="post_avatar">
-					<Avatar src={avatar} />
-				</div>
+				<UserAvatar image={avatar} />
 				<div className="post-header-name-and-time">
 					<div>
 						<h3 className="post_headerText">{displayName}</h3>

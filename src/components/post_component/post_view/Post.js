@@ -14,7 +14,6 @@ import PostScreen from '../../../screens/post_screen/PostScreen';
 function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 	const [ displayName, setDisplayName ] = useState('');
 	const [ avatar, setAvatar ] = useState('');
-	const history = useHistory();
 	const [ open, setOpen ] = useState(false);
 
 	useEffect(() => {
@@ -39,12 +38,13 @@ function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 
 	const handleClick = (event) => {
 		setOpen(true);
-		//	history.push('/postScreen');
 	};
 
 	return (
 		<div>
 			<PostScreen
+				postType={postType}
+				authorId={authorId}
 				open={open}
 				close={setOpen}
 				displayName={displayName}

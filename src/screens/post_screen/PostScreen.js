@@ -7,23 +7,27 @@ import PostDescription from '../../components/post_component/post_view/PostDescr
 import { db } from '../../firebase';
 import WriteComment from '../../components/comments/write_comment/WriteComment';
 import Comment from '../../components/comments/comment/Comment';
-import SideSpace from '../../components/sidebar_component/SideSpace';
-import TrendingPosts from '../../components/trendingposts_component/TrendingPosts';
 import Reactions from '../../components/post_component/post_view/Reactions';
+import DuaRequestReactions from '../../components/dua_request_component/dua_request/DuaRequestReactions';
+import DuaRequestFooter from '../../components/dua_request_component/dua_request/DuaRequestFooter';
 
-function PostScreen({ open, close,displayName,postId,avatar,image,timeStamp,postText }) {
+function PostScreen({ authorId, postType, open, close,displayName,postId,avatar,image,timeStamp,postText }) {
 	const [comments, setComments] = useState([]);
 	const [height, setHeight] = useState("");
 
 
 	useEffect(() => {
-	
+		let commentType = ""
+		if (postType === "feedPost") commentType = "postComments"
+		if (postType === "duaRequest") commentType = "duaRequestComments"
+		if (postType === "qAndA") commentType = "qAndAComments"
+
 		image? setHeight("100vh"):setHeight("50vh");
 		if(open){
 			db
 				.collection('comments')
 				.doc(postId)
-				.collection('postComments')
+				.collection(commentType)
 				.orderBy('timestamp', 'desc')
 				.onSnapshot((snapshot) => setComments(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))));
 		}
@@ -43,9 +47,9 @@ function PostScreen({ open, close,displayName,postId,avatar,image,timeStamp,post
 						<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
 						<PostDescription postText={postText} />
 						<img className="post-image" src={image} alt="" />
-						<Reactions postId={postId} postType="feedPost" />
+						{postType === "duaRequest" ? <DuaRequestReactions requestId={postId} requesterId={authorId} ></DuaRequestReactions>: <Reactions postId={postId} postType="feedPost" />}
 						<Divider />
-						<Footer />
+						{postType === "duaRequest" ? <DuaRequestFooter></DuaRequestFooter> : <Footer />}
 						<div className="comment-box" >
 							<WriteComment className="writeComment" avatar={avatar} />
 						</div>

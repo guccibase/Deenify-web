@@ -37,6 +37,8 @@ function TrendingPost({ postId, postType, authorId, image, timeStamp, postText }
 	return (
 		<div>
 			<PostScreen
+				authorId={authorId}
+				postType={postType}
 				open={open}
 				close={setOpen}
 				displayName={displayName}

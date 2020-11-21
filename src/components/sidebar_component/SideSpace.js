@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 
 function SideSpace() {
 	const history = useHistory();
-	return <div onClick={() => history.goBack()} className="sideSpace" />;
+	return <div className="sideSpace" />;
 }
 
 export default SideSpace;

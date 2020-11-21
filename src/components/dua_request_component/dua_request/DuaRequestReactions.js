@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { db } from '../../../firebase';
 import './DuaRequest.css';
 
-function Reactions({ requestId, requesterId }) {
+function DuaRequestReactions({ requestId, requesterId }) {
 	const [ likesCount, setLikesCount ] = useState();
 	const [ commentsCount, setCommentsCount ] = useState();
 
@@ -48,4 +48,4 @@ function Reactions({ requestId, requesterId }) {
 	);
 }
 
-export default Reactions;
+export default DuaRequestReactions;

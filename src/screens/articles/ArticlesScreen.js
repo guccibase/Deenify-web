@@ -5,6 +5,7 @@ import Feed from '../../components/feed_component/Feed';
 import TrendingPosts from '../../components/trendingposts_component/TrendingPosts';
 import RecentArticles from '../../components/articles/RecentArticles';
 import './RecentArticles.css';
+import SideSpace from '../../components/sidebar_component/SideSpace';
 function ArticlesScreen() {
 	return (
 		<div className="home">
@@ -17,7 +18,7 @@ function ArticlesScreen() {
 			<RecentArticles />
 
 			{/* Widgets */}
-			<TrendingPosts />
+			<SideSpace />
 		</div>
 	);
 }

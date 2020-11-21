@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Avatar, Input } from '@material-ui/core';
+import { Button, Input } from '@material-ui/core';
 import '../postbox_component/PostBox.css';
 import { db } from '../../../firebase';
 import { useAuth } from '../../../contexts/AuthContext';
+import UserAvatar from '../../common/avatars/UserAvatar';
 
 function PostBox({}) {
 	// const [displayName, setDisplayName] = useState('');
@@ -33,7 +34,7 @@ function PostBox({}) {
 		<div className="postBox">
 			<form>
 				<div className="postBox_input">
-					<Avatar src={avatar} />
+					<UserAvatar image={avatar} />
 					<div className="post-textarea">
 						<textarea placeholder="New post" rows="4" cols="50" />
 					</div>

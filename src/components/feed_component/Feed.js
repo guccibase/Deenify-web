@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../feed_component/Feed.css';
 import PostBox from '../post_component/postbox_component/PostBox';
 import Post from '../post_component/post_view/Post';
 import SearchIcon from '@material-ui/icons/Search';
 import { db } from '../../firebase';
 import { useAuth } from '../../contexts/AuthContext';
-import { useHistory } from 'react-router-dom';
-import { PostsProvider, usePosts } from '../../contexts/PostsContext';
+import { usePosts } from '../../contexts/PostsContext';
 
 function Feed({ error }) {
-	const [ posts, setPosts ] = useState([]);
 	const { currentUser } = useAuth();
 	const { setPostList, postList } = usePosts();
-	const history = useHistory();
 
 	useEffect(() => {
 		console.log('feed loaded');
@@ -55,7 +52,7 @@ function Feed({ error }) {
 					<Post
 						key={post.id}
 						postId={post.id}
-						postType="feedPost"
+						postType={'feedPost'}
 						authorId={post.data.authorId}
 						image={post.data.imageUrl}
 						timeStamp={post.data.timestamp}

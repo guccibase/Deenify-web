@@ -42,7 +42,7 @@
 
 .post_description {
 	width: 600px;
-
+	padding-top: 10px;
 	font-size: 15px;
 }
 
@@ -75,4 +75,9 @@
 }
 .footerbtn {
 	cursor: pointer;
+}
+
+.post_avatar {
+	border-radius: 25px;
+	height: 25px;
 }

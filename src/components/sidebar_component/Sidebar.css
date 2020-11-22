@@ -27,9 +27,7 @@
 }
 
 .sideSpace {
-	border: 1px solid var(--deenify-background);
+	padding: 10px;
 	flex: 0.3;
-	padding-left: 20px;
-	padding-right: 20px;
-	background-color: var(--deenify-background);
+	border: 1px solid var(--deenify-background);
 }

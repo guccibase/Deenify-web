@@ -10,10 +10,12 @@ import Comment from '../../components/comments/comment/Comment';
 import Reactions from '../../components/post_component/post_view/Reactions';
 import DuaRequestReactions from '../../components/dua_request_component/dua_request/DuaRequestReactions';
 import DuaRequestFooter from '../../components/dua_request_component/dua_request/DuaRequestFooter';
+import {useAuth} from '../../contexts/AuthContext'
 
 function PostScreen({ authorId, postType, open, close,displayName,postId,avatar,image,timeStamp,postText }) {
 	const [comments, setComments] = useState([]);
 	const [height, setHeight] = useState("");
+	const {currentUser} = useAuth()
 
 
 	useEffect(() => {
@@ -47,7 +49,7 @@ function PostScreen({ authorId, postType, open, close,displayName,postId,avatar,
 						<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
 						<PostDescription postText={postText} />
 						<img className="post-image" src={image} alt="" />
-						{postType === "duaRequest" ? <DuaRequestReactions requestId={postId} requesterId={authorId} ></DuaRequestReactions>: <Reactions postId={postId} postType="feedPost" />}
+						{postType === "duaRequest" ? <DuaRequestReactions requestId={postId} requesterId={authorId} ></DuaRequestReactions> : <Reactions userId={currentUser.uid} postId={postId} postType="feedPost" />}
 						<Divider />
 						{postType === "duaRequest" ? <DuaRequestFooter></DuaRequestFooter> : <Footer />}
 						<div className="comment-box" >

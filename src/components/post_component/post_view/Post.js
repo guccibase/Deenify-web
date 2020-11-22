@@ -7,14 +7,15 @@ import Divider from '../../common/divider/Divider';
 import PostImage from './PostImage';
 import PostDescription from './PostDescription';
 import { db } from '../../../firebase';
-import { useHistory } from 'react-router-dom';
 import WriteComment from '../../comments/write_comment/WriteComment';
 import PostScreen from '../../../screens/post_screen/PostScreen';
+import { useAuth } from '../../../contexts/AuthContext';
 
 function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 	const [ displayName, setDisplayName ] = useState('');
 	const [ avatar, setAvatar ] = useState('');
 	const [ open, setOpen ] = useState(false);
+	const { currentUser } = useAuth();
 
 	useEffect(() => {
 		var docRef = db.collection('users').doc(authorId);
@@ -59,7 +60,7 @@ function Post({ postId, postType, authorId, image, timeStamp, postText }) {
 					<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
 					<PostDescription postText={postText} />
 					<PostImage image={image} postWidth="600px" />
-					<Reactions postType={postType} postId={postId} />
+					<Reactions userId={currentUser.uid} postType={postType} postId={postId} />
 					<Divider />
 					<Footer />
 					<WriteComment avatar={avatar} />

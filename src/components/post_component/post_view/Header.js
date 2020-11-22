@@ -2,6 +2,7 @@ import React from 'react';
 import { ic_more_horiz } from 'react-icons-kit/md/ic_more_horiz';
 import Icon from 'react-icons-kit';
 import UserAvatar from '../../common/avatars/UserAvatar';
+import Timestamp from '../../common/timestamp/Timestamp';
 function Header({ avatar, displayName, timeStamp }) {
 	return (
 		<div className="post-header">
@@ -12,7 +13,7 @@ function Header({ avatar, displayName, timeStamp }) {
 						<h3 className="post_headerText">{displayName}</h3>
 					</div>
 					<div>
-						<p className="post-header-time">{new Date(timeStamp.seconds * 1000).toLocaleDateString()}</p>
+						<Timestamp timestamp={timeStamp} />
 					</div>
 				</div>
 			</div>

@@ -6,8 +6,10 @@ import './Comment.css';
 import UserAvatar from '../../common/avatars/UserAvatar';
 
 function Comment({ commentId, authorId, timeStamp, commentText }) {
-	const [ avatar, setAvatar ] = useState('https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg');
-	const [ displayName, setDisplayName ] = useState('Tahir Nas');
+	const [ avatar, setAvatar ] = useState('');
+	const [ displayName, setDisplayName ] = useState('');
+
+	// https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg
 	// const [ timeStamp, setTimeStamp ] = useState('233112233');
 	// const [ comment, setComment ] = useState(
 	// 	'This is a test, this  is a test this is a esThis is a test, this  is a test this is a esThis is a test, this  is a test this is a esThis is a test, this  is a test this is a esThis is a test, this  is a test this is a es'

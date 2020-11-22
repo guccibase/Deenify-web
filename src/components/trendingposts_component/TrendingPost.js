@@ -5,11 +5,14 @@ import Footer from '../post_component/post_view/Footer';
 import Divider from '../common/divider/Divider';
 import PostScreen from '../../screens/post_screen/PostScreen';
 import { db } from '../../firebase';
+import { useAuth } from '../../contexts/AuthContext';
+import SmallImage from '../common/images/SmallImage';
 
 function TrendingPost({ postId, postType, authorId, image, timeStamp, postText }) {
 	const [ displayName, setDisplayName ] = useState('');
 	const [ avatar, setAvatar ] = useState('');
 	const [ open, setOpen ] = useState(false);
+	const { currentUser } = useAuth();
 
 	useEffect(() => {
 		var docRef = db.collection('users').doc(authorId);
@@ -52,9 +55,9 @@ function TrendingPost({ postId, postType, authorId, image, timeStamp, postText }
 				<Header displayName={displayName} timeStamp={timeStamp} avatar={avatar} />
 				<div className="trendingPost_Description">
 					<p onClick={handleClick}>{postText}</p>
-					<img onClick={handleClick} className="trendingPost-image" src={image} alt="" />
+					<SmallImage handleClick={handleClick} image={image} />
 				</div>
-				<Reactions click={handleClick} postType={postType} postId={postId} />
+				<Reactions click={handleClick} postType={postType} postId={postId} userId={currentUser.uid} />
 				<Divider />
 				<Footer click={handleClick} />
 			</div>

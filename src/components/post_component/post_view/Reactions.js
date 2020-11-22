@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../../firebase';
 
-function Reactions({ postId, postType }) {
+function Reactions({ postId, postType, userId }) {
 	const [ likesCount, setLikesCount ] = useState();
 	const [ commentsCount, setCommentsCount ] = useState();
 
 	//console.log(postId);
 	useEffect(() => {
-		var likes = db.collection('allPosts').doc(postId);
+		var likes = db.collection('feeds').doc(userId).collection('userFeed').doc(postId);
 
 		likes
 			.get()
 			.then(function(doc) {
 				if (doc.exists) {
 					setLikesCount(doc.data().likeCount);
+					console.log(doc.data().caption);
+
+					console.log(doc.data().likeCount);
 				} else {
 					// doc.data() will be undefined in this case
 					console.log('No such document!');

@@ -20,6 +20,7 @@ function NotificationsScreen() {
 			.doc(currentUser.uid)
 			.collection('userActivities')
 			.orderBy('timestamp', 'desc')
+			.limit(20)
 			.onSnapshot((snapshot) => setActivities(snapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }))));
 	}, []);
 

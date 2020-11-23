@@ -1,4 +1,4 @@
-.notifications-screen {
+.profile-screen {
 	display: flex;
 	height: 100vh;
 	max-width: 1400px;
@@ -6,8 +6,7 @@
 	margin-right: auto;
 	padding: 0 10px;
 }
-
-.notifications {
+.profile {
 	flex: 0.4;
 	padding: 10px;
 	border: 1px solid var(--deenify-background);
@@ -15,8 +14,9 @@
 	overflow-y: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+	/* width: 600px; */
 }
 
-.notifications::-webkit-scrollbar {
-	display: none;
+.side {
+	flex: .3;
 }

@@ -1,12 +1,19 @@
 .notification {
 	padding: 10px;
 	display: flex;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 .notification-details {
 	padding-left: 10px;
 	padding-right: 10px;
-	justify-content: start;
+	justify-content: left;
+	flex: .8;
+}
+
+.activity {
+	align-content: space-around;
 }
 
 .notification-text {
@@ -15,8 +22,12 @@
 
 .notification-avatar {
 	padding-top: 5px;
+	flex: .1;
 }
 
 .notification-image {
-	justify-self: right;
+	flex: .1;
+}
+.notification::-webkit-scrollbar {
+	display: none;
 }

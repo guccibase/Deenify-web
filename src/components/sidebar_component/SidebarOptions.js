@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './SideBarOption.css';
 import { Icon } from 'react-icons-kit';
-import { useSidebar } from '../../contexts/SidebarContext';
 import { useHistory } from 'react-router-dom';
 
 function SidebarOptions({ text, icon }) {

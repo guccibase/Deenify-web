@@ -1,0 +1,17 @@
+.cover-image {
+	position: sticky;
+}
+
+.cover-image > img {
+	border-radius: 10px;
+	margin: 2px;
+	max-width: 634px;
+}
+
+.profile-images {
+	position: relative;
+}
+.profile-image {
+	margin-top: -30px;
+	margin-left: 30px;
+}

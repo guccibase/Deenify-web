@@ -109,20 +109,23 @@ function Notification({ activity }) {
 				<div className="notification-avatar">
 					<UserAvatar image={avatar} />
 				</div>
-				<div className="notification-details" onClick={handleClick}>
-					{activity.data.comment === null ? (
-						<p className="notification-text">{displayName} liked your post</p>
-					) : (
-						<p className="notification-text">
-							{displayName} commented: "{activity.data.comment}"
-						</p>
-					)}
-					<Timestamp timestamp={activity.data.timestamp} />
+				<div className="notification-details">
+					<div className="activity" onClick={handleClick}>
+						{activity.data.comment === null ? (
+							<p className="notification-text">{displayName} liked your post</p>
+						) : (
+							<p className="notification-text">
+								{displayName} commented: "{activity.data.comment}"
+							</p>
+						)}
+						<Timestamp timestamp={activity.data.timestamp} />
+					</div>
 				</div>
-				<div className="notification-image">
-					<SmallImage handleClick={handleClick} image={activity.data.postImageUrl} />
-				</div>
-				<div />
+				{activity.data.postImageUrl ? (
+					<div className="notification-image">
+						<SmallImage handleClick={handleClick} image={activity.data.postImageUrl} />
+					</div>
+				) : null}
 			</div>
 		</div>
 	);

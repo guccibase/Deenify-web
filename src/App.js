@@ -13,27 +13,29 @@ import ArticlesScreen from './screens/articles/ArticlesScreen';
 import DuaRequestScreen from './screens/dua_request_screen/DuaRequestScreen';
 import NotificationsScreen from './screens/notifications_screen/NotificationsScreen';
 import ProfileScreen from './screens/profile/ProfileScreen';
+import PrivacyPolicy from './components/more_info/privacy_policy/PrivacyPolicy';
 
 function App() {
 	return (
+		<PrivacyPolicy />
 		//BEM
-		<Router>
-			<AuthProvider>
-				<PostsProvider>
-					<Switch>
-						<PrivateRoute exact path="/" component={Home} />
-						<Route path="/login" component={Login} />
-						<Route path="/signup" component={SignUp} />
-						<Route path="/forgotPassword" component={ForgotPassword} />
-						<Route path="/Articles" component={ArticlesScreen} />
-						<Route path="/Home" component={Home} />
-						<Route path="/Dua Requests" component={DuaRequestScreen} />
-						<Route path="/Notifications" component={NotificationsScreen} />
-						<Route path="/Profile" component={ProfileScreen} />
-					</Switch>
-				</PostsProvider>
-			</AuthProvider>
-		</Router>
+		// <Router>
+		// 	<AuthProvider>
+		// 		<PostsProvider>
+		// 			<Switch>
+		// 				<PrivateRoute exact path="/" component={Home} />
+		// 				<Route path="/login" component={Login} />
+		// 				<Route path="/signup" component={SignUp} />
+		// 				<Route path="/forgotPassword" component={ForgotPassword} />
+		// 				<Route path="/Articles" component={ArticlesScreen} />
+		// 				<Route path="/Home" component={Home} />
+		// 				<Route path="/Dua Requests" component={DuaRequestScreen} />
+		// 				<Route path="/Notifications" component={NotificationsScreen} />
+		// 				<Route path="/Profile" component={ProfileScreen} />
+		// 			</Switch>
+		// 		</PostsProvider>
+		// 	</AuthProvider>
+		// </Router>
 	);
 }
 
